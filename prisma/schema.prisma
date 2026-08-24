@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// User -> Meetings
+
+// User Model
+model User {
+  id String @id @default(uuid())
+  email String @unique
+  firstName String?
+  lastName String?
+  role Role @default(STAFF)
+  department Departments?
+  phone String?
+  password String
+  availability_status AvailabilityStatus @default(available)
+  account_status AccountStatus @default(inactive)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  meetings Meeting[]
+}
+
+enum Role {
+  ADMIN
+  STAFF
+}
+
+enum Departments {
+  energy_services
+  digital_services
+  learning_services
+  innovation_services
+  corporate_finance
+  corporate_innovation
+  human_resources
+  business_locations
+  technology_innovation
+  marketing_communication
+}
+
+enum AvailabilityStatus {
+  available
+  unavailable
+  busy
+}
+
+enum AccountStatus {
+  active
+  inactive
+  disabled
+}
+
+// Meeting model
+model Meeting {
+  id String @id @default(uuid())
+  visitor_name String
+  visitor_email String
+  visitor_phone String
+  reason String
+  status MeetingStatus @default(Pending)
+  rejectionReason String?
+  userId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+enum MeetingStatus {
+   Pending
+   Approved
+   Rejected
+   Ongoing
+}
