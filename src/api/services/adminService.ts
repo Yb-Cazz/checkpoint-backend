@@ -1,11 +1,17 @@
 
 
-import { ConflictError, NotFoundError } from "../errors/AppError.js"
-import { createStaff, disableStaff, enableStaff, isActive, isDisabled, resetPassword } from "../repositories/adminRespository.js"
+import { ConflictError, NotFoundError } from "../../errors/AppError.js"
+import { 
+    createStaff, 
+    disableStaff, 
+    enableStaff, isActive, 
+    isDisabled, 
+    resetPassword 
+} from "../repositories/adminRespository.js"
 import { findUserByEmail, findUserById } from "../repositories/globalRepository.js"
-import { CreateStaffData, ResetPasswordData } from "../types/types.js"
-import { comparePassword, hashPassword } from "../utils/handlePassword.js"
-import { generateRandomPassword } from "../utils/randomPassword.js"
+import { CreateStaffData, ResetPasswordData } from "../../types/types.js"
+import { comparePassword, hashPassword } from "../../utils/handlePassword.js"
+import { generateRandomPassword } from "../../utils/randomPassword.js"
 
 
 export const createStaffService = async ( data: CreateStaffData) => {

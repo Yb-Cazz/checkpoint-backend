@@ -1,5 +1,5 @@
 import type { Request, Response } from "express"
-import { createMeetingService } from "../../services/meetingService.js"
+import { createMeetingService } from "../services/meetingService.js"
 import { MeetingStatus, Prisma } from "../../generated/prisma/client.js";
 import logger from "../../utils/logger.js";
 

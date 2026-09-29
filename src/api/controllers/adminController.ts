@@ -2,7 +2,12 @@ import type { Request, Response } from "express"
 import logger from "../../utils/logger.js"
 
 import { CreateStaffData, ResetPasswordData } from "../../types/types.js"
-import { createStaffService, disableStaffService, enableStaffService, resetPasswordService } from "../../services/adminService.js"
+import { 
+    createStaffService, 
+    disableStaffService, 
+    enableStaffService, 
+    resetPasswordService 
+} from "../services/adminService.js"
 
 type StaffStatusParam = {
     id: string

@@ -1,7 +1,7 @@
-import { prisma } from "../config/database.js"
-import { UnauthorizedError } from "../errors/AppError.js"
-import { Prisma } from "../generated/prisma/client.js"
-import { UserUpdateInput } from "../generated/prisma/models.js"
+import { prisma } from "../../config/database.js"
+import { UnauthorizedError } from "../../errors/AppError.js"
+import { Prisma } from "../../generated/prisma/client.js"
+import { UserUpdateInput } from "../../generated/prisma/models.js"
 
 export const onboardStaff = async ({id, firstName, lastName, password}:UserUpdateInput) => {
 

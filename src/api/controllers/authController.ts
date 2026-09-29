@@ -1,7 +1,7 @@
 import type { Request, Response } from "express"
 import logger from "../../utils/logger.js"
 import { LoginData } from "../../types/types.js"
-import { loginService } from "../../services/authService.js"
+import { loginService } from "../services/authService.js"
 import { nodeEnv } from "../../config/env.js"
 
 export const loginController = async (

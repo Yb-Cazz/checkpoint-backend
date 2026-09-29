@@ -1,7 +1,7 @@
-import { AccountStatus, Prisma } from "../generated/prisma/client.js";
-import { prisma } from "../config/database.js"
-import { ConflictError, NotFoundError } from "../errors/AppError.js";
-import { FindUniqueUser, ResetPasswordData } from "../types/types.js";
+import { AccountStatus, Prisma } from "../../generated/prisma/client.js";
+import { prisma } from "../../config/database.js"
+import { ConflictError, NotFoundError } from "../../errors/AppError.js";
+import { FindUniqueUser, ResetPasswordData } from "../../types/types.js";
 
 
 // create staff repo

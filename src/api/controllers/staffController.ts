@@ -1,7 +1,7 @@
 import type { Request, Response } from "express"
 import { OnboardStaffData } from "../../types/types.js"
 import logger from "../../utils/logger.js"
-import { onboardStaffService } from "../../services/staffService.js"
+import { onboardStaffService } from "../services/staffService.js"
 
 type OnboardStaffParam = {
     id: string

@@ -1,5 +1,5 @@
-import { AccountStatus, Prisma } from "../generated/prisma/client.js";
-import { prisma } from "../config/database.js"
+import { AccountStatus, Prisma } from "../../generated/prisma/client.js";
+import { prisma } from "../../config/database.js"
 
 
 export const findUserByEmail = async (email: string) => {

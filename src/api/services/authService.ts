@@ -1,12 +1,12 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-import { UnauthorizedError } from "../errors/AppError.js";
-import { LoginData } from "../types/types.js";
-import { comparePassword } from "../utils/handlePassword.js";
+import { UnauthorizedError } from "../../errors/AppError.js";
+import { LoginData } from "../../types/types.js";
+import { comparePassword } from "../../utils/handlePassword.js";
 import { getUserByEmail } from "../repositories/authRepository.js";
-import { jwtExpiresIn, jwtSecret } from "../config/env.js";
-import { generateAccessToken } from "../utils/jwt.js";
+import { jwtExpiresIn, jwtSecret } from "../../config/env.js";
+import { generateAccessToken } from "../../utils/jwt.js";
 
 
 

@@ -1,8 +1,8 @@
-import { ConflictError, NotFoundError } from "../errors/AppError.js";
+import { ConflictError, NotFoundError } from "../../errors/AppError.js";
 import { findUserById } from "../repositories/globalRepository.js";
 import { onboardStaff } from "../repositories/staffRepository.js";
-import { OnboardStaffData } from "../types/types.js";
-import { comparePassword } from "../utils/handlePassword.js";
+import { OnboardStaffData } from "../../types/types.js";
+import { comparePassword } from "../../utils/handlePassword.js";
 
 interface OnboardStaffService extends OnboardStaffData {
     id: string
